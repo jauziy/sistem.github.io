@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Laporan Automatik</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistem Laporan Automatik</h1>
+        
+        <form id="laporanForm">
+            <div class="form-group">
+                <label for="namaPelapor">Nama Pelapor:</label>
+                <input type="text" id="namaPelapor" required>
+            </div>
+
+            <div class="form-group">
+                <label for="namaAktiviti">Nama Aktiviti / Program:</label>
+                <input type="text" id="namaAktiviti" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ulasan">Ulasan:</label>
+                <textarea id="ulasan" rows="4" required></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="tarikhAktiviti">Tarikh Aktiviti:</label>
+                    <input type="date" id="tarikhAktiviti" required>
+                </div>
+                <div class="col">
+                    <label for="hari">Hari:</label>
+                    <input type="text" id="hari" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="masaAktiviti">Masa Aktiviti:</label>
+                    <input type="time" id="masaAktiviti" required>
+                </div>
+                <div class="col">
+                    <label for="jumlahKehadiran">Jumlah Kehadiran Pelajar:</label>
+                    <input type="number" id="jumlahKehadiran" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="gambar">Muat Naik Gambar (Maksimum 4):</label>
+                <input type="file" id="gambar" accept="image/*" multiple>
+                <div id="imagePreview" class="image-preview"></div>
+            </div>
+
+            <button type="button" onclick="generatePDF()">Jana Laporan PDF</button>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
